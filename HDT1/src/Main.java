@@ -1,12 +1,26 @@
 import java.util.Scanner;
 
+/**
+ * Clase principal que contiene el método main para interactuar con la radio.
+ */
 
 public class Main {
+
+    /**
+     * Método principal que interactúa con el usuario para controlar la radio.
+     *
+     * @param args Argumentos de la línea de comandos (no se utilizan en este caso).
+     */
+
     public static void main(String[] args) {
+        // Crear una instancia de la clase Radio
         Radio radio = new Radio();
+        // Crear un objeto Scanner para recibir la entrada del usuario
         Scanner scanner = new Scanner(System.in);
 
+        // Bucle principal para la interacción con el usuario
         while (true) {
+            // Mostrar opciones al usuario
             System.out.println("\n" + "1. Encender/Apagar el radio");
             System.out.println("2. Cambiar a AM/FM");
             System.out.println("3. Siguiente frecuencia");
@@ -15,8 +29,11 @@ public class Main {
             System.out.println("6. Obtener frecuencia favorita");
             System.out.println("7. Desconectar el Radio");
             System.out.print("Seleccione una opción: \n");
+
+            // Leer la opción del usuario
             int option = scanner.nextInt();
 
+            // Realizar acciones según la opción seleccionada
             switch (option) {
                 case 1:
                     radio.tooglePowerOffOn();

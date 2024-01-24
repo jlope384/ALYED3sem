@@ -1,11 +1,15 @@
 /*Universidad del Valle 
 @autores: Javier Lopez del Cid - 23415
-Daniela Ramirez - 23
-Luis Pedro Lira - 23
+Daniela Ramirez - 23053
+Luis Pedro Lira - 23669
 Hoja de Trabajo 1 - Radio
 Algoritmos y Estructuras de Datos
 Seccion 20
 */
+
+/**
+ * Clase que implementa la interfaz IRadio y representa una radio.
+ */
 
 public class Radio implements IRadio {
     private boolean isOn;
@@ -13,20 +17,27 @@ public class Radio implements IRadio {
     private float currentFrequency;
     private float[] favoriteFrequencies = new float[10];
 
+    /**
+     * Constructor que inicializa una instancia de Radio con valores predeterminados.
+     */
+
     public Radio() {
         this.isOn = false;
         this.isAM = true;
         this.currentFrequency = 530;
     }
 
+    @Override
     public boolean getState() {
         return this.isOn;
     }
 
+    @Override
     public void tooglePowerOffOn() {
         this.isOn = !this.isOn;
     }
 
+    @Override
     public void toogleAMFM() {
         this.isAM = !this.isAM;
         if (this.isAM) {
@@ -36,6 +47,7 @@ public class Radio implements IRadio {
         }
     }
 
+    @Override
     public boolean getStateAMFM() {
         return this.isAM;
     }
@@ -56,6 +68,7 @@ public class Radio implements IRadio {
         }
     }
 
+    @Override
     public void previousFrequency() {
         if (this.isAM) {
             if (this.currentFrequency == 530) {
@@ -72,14 +85,17 @@ public class Radio implements IRadio {
         }
     }
 
+    @Override
     public float getCurrentFrequency() {
         return this.currentFrequency;
     }
 
+    @Override
     public void setFavFrequency(int button) {
         this.favoriteFrequencies[button - 1] = this.currentFrequency;
     }
 
+    @Override
     public float getFavFrequency(int button) {
         return this.favoriteFrequencies[button-1];
     }
