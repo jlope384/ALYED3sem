@@ -1,3 +1,12 @@
+/*Universidad del Valle 
+@autores: Javier Lopez del Cid - 23415
+Daniela Ramirez - 23053
+Luis Pedro Lira - 23669
+Hoja de Trabajo 1 - Radio
+Algoritmos y Estructuras de Datos
+Seccion 20
+*/
+
 import java.util.Scanner;
 
 /**
