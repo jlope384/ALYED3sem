@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Radio radio = new Radio();
-        Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            System.out.println("1. Encender/Apagar el radio");
-=======
 /*Universidad del Valle 
 @autores: Javier Lopez del Cid - 23415
 Daniela Ramirez - 23053
@@ -42,59 +31,12 @@ public class Main {
         while (true) {
             // Mostrar opciones al usuario
             System.out.println("\n" + "1. Encender/Apagar el radio");
->>>>>>> 59d0195035b4e4d973edb2b78681a674eadcab3b
             System.out.println("2. Cambiar a AM/FM");
             System.out.println("3. Siguiente frecuencia");
             System.out.println("4. Frecuencia anterior");
             System.out.println("5. Guardar frecuencia actual como favorita");
             System.out.println("6. Obtener frecuencia favorita");
             System.out.println("7. Desconectar el Radio");
-<<<<<<< HEAD
-            System.out.print("Seleccione una opción: ");
-            int option = scanner.nextInt();
-
-            switch (option) {
-                case 1:
-                    radio.tooglePowerOffOn();
-                    if (radio.getState())
-                        System.out.println("El radio está encendido");
-                    else
-                        System.out.println("El radio está apagado");
-                    break;
-                case 2:
-                    radio.toogleAMFM();
-                    if (radio.getStateAMFM())
-                        System.out.println("El radio está en AM");
-                    else
-                        System.out.println("El radio está en FM");
-                    break;
-                case 3:
-                    radio.nextFrequency();
-                    System.out.println("La frecuencia actual es " + radio.getCurrentFrequency());
-                    break;
-                case 4:
-                    radio.previousFrequency();
-                    System.out.println("La frecuencia actual es " + radio.getCurrentFrequency());
-                    break;
-                case 5:
-                    System.out.print("Ingrese el número del botón (0-9) para guardar su frecuencia: ");
-                    int button = scanner.nextInt();
-                    radio.setFavFrequency(button);
-                    System.out.println("La frecuencia actual ha sido guardada en el botón " + button);
-                    break;
-                case 6:
-                    System.out.print("Ingrese el número del botón (0-9) para obtener su frecuencia: ");
-                    button = scanner.nextInt();
-                    System.out.println(
-                            "La frecuencia guardada en el botón " + button + " es " + radio.getFavFrequency(button));
-                    break;
-                case 7:
-                    System.out.println("Power off.");
-                    scanner.close();
-                    return;
-                default:
-                    System.out.println("Opción no válida. Por favor, intente de nuevo.");
-=======
             System.out.print("Seleccione una opción: \n");
 
             // Leer la opción del usuario
@@ -104,16 +46,16 @@ public class Main {
             switch (option) {
                 case 1:
                     radio.tooglePowerOffOn();
-                   if (radio.getState()) 
+                    if (radio.getState())
                         System.out.println("El radio está encendido \n");
-                    else 
+                    else
                         System.out.println("El radio está apagado \n");
                     break;
                 case 2:
                     radio.toogleAMFM();
-                    if (radio.getStateAMFM()) 
+                    if (radio.getStateAMFM())
                         System.out.println("El radio está en AM \n");
-                    else 
+                    else
                         System.out.println("El radio está en FM \n");
                     break;
                 case 3:
@@ -133,7 +75,8 @@ public class Main {
                 case 6:
                     System.out.print("Ingrese el número del botón (0-9) para obtener su frecuencia: \n");
                     button = scanner.nextInt();
-                    System.out.println("La frecuencia guardada en el botón " + button + " es " + radio.getFavFrequency(button) + "\n");
+                    System.out.println("La frecuencia guardada en el botón " + button + " es "
+                            + radio.getFavFrequency(button) + "\n");
                     break;
                 case 7:
                     System.out.println("Power off. \n");
@@ -141,7 +84,6 @@ public class Main {
                     return;
                 default:
                     System.out.println("Opción no válida. Por favor, intente de nuevo. \n");
->>>>>>> 59d0195035b4e4d973edb2b78681a674eadcab3b
             }
         }
     }
