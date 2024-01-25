@@ -8,11 +8,11 @@ public interface ICalculator {
 
     public int multiplication(int n1, int n2); // Multiplicación
 
-    public int division(int n1, int n2); // División
+    public int division(int n1, int n2) throws Exception; // División
 
-    public int residue(int n1, int n2); // Residuo (módulo)
+    public int residue(int n1, int n2) throws Exception;// Residuo (módulo)
 
-    public ArrayList<Character> read(String CharactersString);
+    public ArrayList<Character> read(String CharactersString) throws Exception;
 
-    public int result(ArrayList<Character> elements);
+    public int result(ArrayList<Character> elements) throws Exception;
 }
