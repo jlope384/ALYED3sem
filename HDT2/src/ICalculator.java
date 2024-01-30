@@ -12,7 +12,7 @@ public interface ICalculator {
 
     public int residue(int n1, int n2) throws Exception;// Residuo (módulo)
 
-    public ArrayList<Character> read(String CharactersString) throws Exception;
+    public ArrayList<String> read(String CharactersString) throws Exception;
 
-    public int result(ArrayList<Character> elements) throws Exception;
+    public int result(ArrayList<String> elements) throws Exception;
 }
