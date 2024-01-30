@@ -2,46 +2,51 @@
 
     public class StackWithVector<T> implements IStack<T>{
         private Vector<T> stack;
-        private int top;
 
         //Constuctor para inicializar el vector y mostrar que no hay elementos en la pila
         public StackWithVector() {
             stack = new Vector<T>();
-            top = -1;
         }
 
         @Override
         public int size() {
-            return top + 1;
+            return stack.size();
         }
 
         @Override
         public boolean isEmpty() {
-            return top==-1; //si top==-1 está vacio, si no, esta llena
+            return stack.isEmpty();
         }
 
         @Override
         public void push(T value) {
-            top++;
             stack.add(value);
         }
 
         @Override
         public T pop() {
-            if (isEmpty()) {
+            T tempValue = null;
+            if (!isEmpty()) {
+                tempValue= stack.remove(stack.size() - 1);
+            }
+            else{
                 throw new IllegalStateException("La pila está vacía");
             }
-            T item = stack.remove(top);
-            top--;
-            return item;
+
+            return tempValue;
         }
 
         @Override
         public T peek() {
-            if (isEmpty()) {
+            T tempValue = null;
+            if (!isEmpty()) {
+                tempValue= stack.get(stack.size() - 1);
+            }
+            else{
                 throw new IllegalStateException("La pila está vacía");
             }
-            return stack.get(top);
+
+            return tempValue;
         }
         
     }
