@@ -29,8 +29,14 @@ public class Calculator implements ICalculator {
 
     @Override
     public ArrayList<String> read(String CharactersString) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'read'");
+        ArrayList<String> operatorAndOperand = new ArrayList<String>();
+        String[] partes = CharactersString.split(" ");
+
+        for (String parte : partes) {
+            operatorAndOperand.add(parte);
+        }
+
+        return operatorAndOperand;
     }
 
     @Override
