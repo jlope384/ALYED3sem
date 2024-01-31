@@ -6,7 +6,7 @@ public class Driver {
     public static void main(String[] args) throws Exception {
         IStack<String> stack = new StackWithVector<>();
         ICalculator calculator =  new Calculator();
-        String file = "../datos.txt";
+        String file = "HDT2\\datos.txt";
 
         String CharactersString;
         int result=0;
@@ -30,7 +30,8 @@ public class Driver {
                         int n1 = Integer.parseInt(stack.peek());
                         stack.pop();                        
                         int n2 = Integer.parseInt(stack.peek());
-                    
+                        stack.pop();
+
                         result = calculator.add(n1, n2);
 
                         stack.push(Integer.toString(result));
@@ -40,7 +41,8 @@ public class Driver {
                         n1 = Integer.parseInt(stack.peek());
                         stack.pop();
                         n2 = Integer.parseInt(stack.peek());
-                        
+                        stack.pop();
+
                         result = calculator.substraction(n1, n2);
 
                         stack.push(Integer.toString(result));
@@ -50,6 +52,7 @@ public class Driver {
                         n1 = Integer.parseInt(stack.peek());
                         stack.pop();
                         n2 = Integer.parseInt(stack.peek());
+                        stack.pop();
 
                         result = calculator.multiplication(n1, n2);
 
@@ -60,6 +63,7 @@ public class Driver {
                         n1 = Integer.parseInt(stack.peek());
                         stack.pop();
                         n2 = Integer.parseInt(stack.peek());
+                        stack.pop();
 
                         result = calculator.division(n1, n2);
 
@@ -69,6 +73,7 @@ public class Driver {
                         n1 = Integer.parseInt(stack.peek());
                         stack.pop();
                         n2 = Integer.parseInt(stack.peek());
+                        stack.pop();
 
                         result = calculator.residue(n1, n2);
 
