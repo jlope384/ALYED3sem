@@ -5,18 +5,15 @@ import java.io.IOException;
 public class Driver {
     public static void main(String[] args) throws Exception {
         IStack stack = new StackWithVector<>();
-        ICalculator calculator =  new Calculator();
+        ICalculator calculator = new Calculator();
         String file = "../datos.txt";
 
         String CharactersString;
-        int result=0;
+        int result = 0;
         CharactersString = readFile(file);
 
         System.out.println("BIENVENIDO");
         System.out.println("La cadena de texto a operar es: " + CharactersString);
-
-        
-
 
         for (String elemento : calculator.read(CharactersString)) {
 
@@ -52,20 +49,13 @@ public class Driver {
                         break;
                 }
             }
-        }        
+        }
 
+        System.out.println("El resultado es: " + Integer.toString(result));
 
-        System.out.println("El resultado es: "+ Integer.toString(result));
-
-
-
-
-
-        
-        
     }
 
-    private static String readFile(String archivo){
+    private static String readFile(String archivo) {
         try {
             BufferedReader lector = new BufferedReader(new FileReader(archivo));
             StringBuilder content = new StringBuilder();
@@ -80,9 +70,8 @@ public class Driver {
             String CharactersString = content.toString();
             return CharactersString;
         } catch (IOException e) {
-            return "Error al leer el archivo: "+e.getMessage();
+            return "Error al leer el archivo: " + e.getMessage();
         }
     }
-
 
 }
