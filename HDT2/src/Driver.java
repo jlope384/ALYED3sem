@@ -4,14 +4,18 @@ import java.io.IOException;
 
 public class Driver {
     public static void main(String[] args) throws Exception {
-        String archivo = "../datos.txt";
+        String file = "../datos.txt";
 
         String CharactersString;
-        CharactersString = readFile(archivo);
+        int result=0;
+        CharactersString = readFile(file);
 
+        System.out.println("BIENVENIDO");
+        System.out.println("La cadena de texto a operar es: " + CharactersString);
 
+        
 
-
+        System.out.println("El resultado es: "+ Integer.toString(result));
 
 
 
