@@ -41,8 +41,32 @@ public class Calculator implements ICalculator {
 
     @Override
     public int result(ArrayList<String> elements) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'result'");
+        int result = 0;
+        int n1 = Integer.parseInt(elements.get(0));
+        int n2 = Integer.parseInt(elements.get(2));
+        String operator = elements.get(1);
+
+        switch (operator) {
+            case "+":
+                result = add(n1, n2);
+                break;
+            case "-":
+                result = subtraction(n1, n2);
+                break;
+            case "*":
+                result = multiplication(n1, n2);
+                break;
+            case "/":
+                result = division(n1, n2);
+                break;
+            case "%":
+                result = residue(n1, n2);
+                break;
+            default:
+                throw new Exception("Operador no válido");
+        }
+
+        return result;
     }
 
 }
