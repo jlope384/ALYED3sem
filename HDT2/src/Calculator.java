@@ -8,7 +8,7 @@ public class Calculator implements ICalculator {
     }
 
     @Override
-    public int subtraction(int n1, int n2) {
+    public int substraction(int n1, int n2) {
         return n1 - n2;
     }
 
@@ -40,8 +40,7 @@ public class Calculator implements ICalculator {
     }
 
     @Override
-    public int result(ArrayList<String> elements) throws Exception {
-        // TODO Auto-generated method stub
+    public int solve(ArrayList<String> elements) throws Exception {
         throw new UnsupportedOperationException("Unimplemented method 'result'");
     }
     

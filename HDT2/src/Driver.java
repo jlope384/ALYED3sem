@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Driver {
     public static void main(String[] args) throws Exception {
-        IStack stackWithVector = new StackWithVector<>();
+        IStack stack = new StackWithVector<>();
         ICalculator calculator =  new Calculator();
         String file = "../datos.txt";
 
@@ -22,6 +22,7 @@ public class Driver {
 
             if (elemento.matches("\\d+")) { // La expresión regular "\\d+" verifica si la cadena contiene solo dígitos
                 System.out.println(elemento + " es un número");
+                stack.push(elemento);
 
             } else {
                 // Si no es un número, asumimos que es un operador

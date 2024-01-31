@@ -4,7 +4,7 @@ public interface ICalculator {
     // Definición de la interfaz ICalculator
     public int add(int n1, int n2); // Suma
 
-    public int subtraction(int n1, int n2); // Resta
+    public int substraction(int n1, int n2); // Resta
 
     public int multiplication(int n1, int n2); // Multiplicación
 
@@ -14,5 +14,5 @@ public interface ICalculator {
 
     public ArrayList<String> read(String CharactersString) throws Exception;
 
-    public int result(ArrayList<String> elements) throws Exception;
+    public int solve(ArrayList<String> elements) throws Exception;
 }
