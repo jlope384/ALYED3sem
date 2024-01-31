@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Driver {
     public static void main(String[] args) throws Exception {
-        IStack stack = new StackWithVector<>();
+        IStack<String> stack = new StackWithVector<>();
         ICalculator calculator =  new Calculator();
         String file = "../datos.txt";
 
@@ -21,15 +21,20 @@ public class Driver {
         for (String elemento : calculator.read(CharactersString)) {
 
             if (elemento.matches("\\d+")) { // La expresión regular "\\d+" verifica si la cadena contiene solo dígitos
-                System.out.println(elemento + " es un número");
                 stack.push(elemento);
 
             } else {
                 // Si no es un número, asumimos que es un operador
                 switch (elemento) {
                     case "+":
-                        System.out.println("Encontrado operador de suma");
-                        // Realizar acción para el operador de suma
+                        int n1 = Integer.parseInt(stack.peek());
+                        stack.pop();                        
+                        int n2 = Integer.parseInt(stack.peek());
+                    
+                        result = calculator.add(n1, n2);
+
+                        stack.push(Integer.toString(result));
+
                         break;
                     case "-":
                         System.out.println("Encontrado operador de resta");
@@ -54,7 +59,7 @@ public class Driver {
             }
         }        
 
-
+        
         System.out.println("El resultado es: "+ Integer.toString(result));
 
 
