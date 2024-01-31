@@ -82,7 +82,7 @@ public class Driver {
         }        
 
         
-        System.out.println("El resultado es: "+ Integer.toString(result));        
+        System.out.println("El resultado es: "+ stack.peek());        
     }
 
     private static String readFile(String archivo){
