@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Calculator implements ICalculator {
-    
+
     @Override
     public int add(int n1, int n2) {
         return n1 + n2;
@@ -14,12 +14,12 @@ public class Calculator implements ICalculator {
 
     @Override
     public int multiplication(int n1, int n2) {
-        return n1*n2;
+        return n1 * n2;
     }
 
     @Override
     public int division(int n1, int n2) throws Exception {
-        return n1/n2;
+        return n1 / n2;
     }
 
     @Override
@@ -38,5 +38,5 @@ public class Calculator implements ICalculator {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'result'");
     }
-    
+
 }
