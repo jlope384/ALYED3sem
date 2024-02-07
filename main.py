@@ -1,3 +1,7 @@
+#Universidad del Valle de Guatemala
+#Algoritmos y estructura de Datos
+#Hoja de Trabajo No. 3
+
 import random
 import sorts as sorts
 import timeit
