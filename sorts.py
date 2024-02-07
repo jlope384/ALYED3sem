@@ -123,50 +123,37 @@ def quickSort(arr, low, high, ascending):
         quickSort(arr, pi+1, high, ascending)
         
     return arr
-def counting(arr, place, ascending=True):
-    size = len(arr)
-    output = [0] * size
+def countingSort(arr, digit, n):
+    output = [0] * n
     count = [0] * 10
 
-    # Construye el arreglo de conteo
-    for i in range(size):
-        index = (arr[i] // place) % 10
-        count[index] += 1
+    for i in range(n):
+        index = arr[i] // digit
+        count[int(index % 10)] += 1
 
-    if ascending:
-        # Ajusta el arreglo de conteo para reflejar las posiciones acumuladas para ascendente
-        for i in range(1, 10):
-            count[i] += count[i - 1]
-    else:
-        # Ajusta el arreglo de conteo para descendente
-        for i in range(8, -1, -1):
-            count[i] += count[i + 1]
+    for i in range(1, 10):
+        count[i] += count[i - 1]
 
-    if ascending:
-        i = size - 1
-        while i >= 0:
-            index = (arr[i] // place) % 10
-            output[count[index] - 1] = arr[i]
-            count[index] -= 1
-            i -= 1
-    else:
-        i = 0
-        while i < size:
-            index = (arr[i] // place) % 10
-            output[size - count[index]] = arr[i]
-            count[index] -= 1
-            i += 1
+    i = n - 1
+    while i >= 0:
+        index = arr[i] // digit
+        output[count[int(index % 10)] - 1] = arr[i]
+        count[int(index % 10)] -= 1
+        i -= 1
 
-    # Copia el arreglo de salida al original
-    for i in range(size):
+    for i in range(n):
         arr[i] = output[i]
 
 def radixSort(arr, ascending=True):
-    max_element = max(arr)
-    place = 1
-    while max_element // place > 0:
-        counting(arr, place, ascending)
-        place *= 10
+    n = len(arr)
+    max_val = max(arr)
+    digit = 1
+    while max_val // digit > 0:
+        countingSort(arr, digit, n)
+        digit *= 10
+
+    if not ascending:
+        arr.reverse()
 
     return arr
 
