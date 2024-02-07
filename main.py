@@ -1,6 +1,7 @@
 import random
 import sorts
 import timeit
+import cProfile
 
 def generatorRandom():
     array = [random.randint(1, 10000) for j in range(3000)]
@@ -38,4 +39,4 @@ def run_algorithms():
     sorts.shellSort(numerosAleatorios, ascDescBoolean)
     print("shellSort:", timeit.default_timer() - start_time, "seconds")
 
-run_algorithms()
+cProfile.run('run_algorithms()')
