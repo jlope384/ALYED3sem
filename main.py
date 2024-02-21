@@ -1,41 +1,25 @@
-import random
+import cProfile
+from main import generatorRandom
 import sorts
-import timeit
-
-def generatorRandom():
-    array = [random.randint(1, 10000) for j in range(3000)]
-    return array
 
 def run_algorithms():
     numerosAleatorios = generatorRandom()
     ascDescBoolean = False
 
-    start_time = timeit.default_timer()
-    sorts.quickSort(numerosAleatorios, 0, len(numerosAleatorios) - 1, ascDescBoolean)
-    print("quickSort:", timeit.default_timer() - start_time, "seconds")
+    profiler = cProfile.Profile()
+    profiler.enable()
+    print(sorts.quickSort(numerosAleatorios, 0, len(numerosAleatorios) - 1, ascDescBoolean))
+    profiler.disable()
+    profiler.print_stats()
 
-    start_time = timeit.default_timer()
+    profiler = cProfile.Profile()
+    profiler.enable()
     sorts.gnomeSort(numerosAleatorios, ascDescBoolean)
-    print("gnomeSort:", timeit.default_timer() - start_time, "seconds")
+    profiler.disable()
+    profiler.print_stats()
 
-    start_time = timeit.default_timer()
+    profiler = cProfile.Profile()
+    profiler.enable()
     sorts.heapSort(numerosAleatorios, ascDescBoolean)
-    print("heapSort:", timeit.default_timer() - start_time, "seconds")
-
-    start_time = timeit.default_timer()
-    sorts.mergeSort(numerosAleatorios, ascDescBoolean)
-    print("mergeSort:", timeit.default_timer() - start_time, "seconds")
-
-    start_time = timeit.default_timer()
-    sorts.radixSort(numerosAleatorios, ascDescBoolean)
-    print("radixSort:", timeit.default_timer() - start_time, "seconds")
-
-    start_time = timeit.default_timer()
-    sorts.selectionSort(numerosAleatorios, ascDescBoolean)
-    print("selectionSort:", timeit.default_timer() - start_time, "seconds")
-
-    start_time = timeit.default_timer()
-    sorts.shellSort(numerosAleatorios, ascDescBoolean)
-    print("shellSort:", timeit.default_timer() - start_time, "seconds")
-
-run_algorithms()
+    profiler.disable()
+    profiler.print_stats()
