@@ -1,3 +1,0 @@
-interface Usuario {
-    void mostrarOpciones();
-}

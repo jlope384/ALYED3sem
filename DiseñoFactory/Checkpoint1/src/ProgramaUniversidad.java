@@ -1,39 +1,41 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ProgramaUniversidad {
     public static void main(String[] args) {
+        // Crear instancias de usuarios (puedes cargarlos desde un archivo CSV o base de datos)
+        List<IUsuario> usuarios = new ArrayList<>();
+        IUsuario estudiante = new Estudiante();
+        estudiante.setId(1);
+        estudiante.setFirstName("Juan");
+        estudiante.setLastName("Pérez");
+        usuarios.add(estudiante);
+        IUsuario docente = new Docente();
+        docente.setId(2);
+        docente.setFirstName("María");
+        docente.setLastName("González");
+        usuarios.add(docente);
+        IUsuario administrativo = new Administrativo();
+        administrativo.setId(3);
+        administrativo.setFirstName("Carlos");
+        administrativo.setLastName("López");
+        usuarios.add(administrativo);
+        IUsuario auditor = new Auditor();
+        auditor.setId(4);
+        auditor.setFirstName("Ana");
+        auditor.setLastName("Martínez");
+        usuarios.add(auditor);
+        // Mostrar opciones para cada usuario
         Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Ingrese el tipo de usuario (Estudiante/Docente/Administrativo/AuditorExterno): ");
-        String tipoUsuario = scanner.nextLine().toLowerCase();
-
-        SistemaUniversitarioFactory factory;
-
-        scanner.close();
-
-        // Crear la fábrica según el tipo de usuario
-        switch (tipoUsuario) {
-            case "estudiante":
-                factory = new EstudianteFactory();
-                break;
-            case "docente":
-                factory = new DocenteFactory();
-                break;
-            case "administrativo":
-                factory = new AdministrativoFactory();
-                break;
-            case "auditorexterno":
-                factory = new AuditorExternoFactory();
-                break;
-            default:
-                System.out.println("Tipo de usuario no válido.");
-                return;
+        System.out.println("Ingrese su ID de usuario");
+        int id = scanner.nextInt();
+        IUsuario usuario = usuarios.stream().filter(u -> u.getId() == id).findFirst().orElse(null);
+        if (usuario != null) {
+            usuario.showOptions();
+        } else {
+            System.out.println("Usuario no encontrado");
         }
-
-        // Crear el usuario utilizando la fábrica correspondiente
-        Usuario usuario = factory.crearUsuario();
-
-        // Mostrar opciones al usuario
-        usuario.mostrarOpciones();
+        scanner.close();
     }
 }
