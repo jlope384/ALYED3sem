@@ -1,15 +1,15 @@
-//Se implementa al estudiante
-class EstudianteFactory implements UsuarioFactory {
+class PersonalAdministrativoFactory implements UsuarioFactory {
     public Estudiante crearEstudiante() {
         return new Estudiante();
     }
     public Docente crearDocente() {
-        return null; // No aplicable para estudiantes
+        return new Docente();
     }
     public PersonalAdministrativo crearPersonalAdministrativo() {
-        return null; // No aplicable para estudiantes
+        return new PersonalAdministrativo();
     }
     public AuditorExterno crearAuditorExterno() {
-        return null; // No aplicable para estudiantes
+        return null; // No aplicable para personal administrativo
     }
 }
+
