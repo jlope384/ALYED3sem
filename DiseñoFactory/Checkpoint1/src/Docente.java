@@ -37,7 +37,7 @@ class Docente implements IUsuario {
                     System.out.println("Notas");
                     break;
                 case 2:
-                    System.out.println("Conbrar pago");
+                    System.out.println("Cobrar pago");
                     break;
                 case 3:
                     System.out.println("Historial de pagos");

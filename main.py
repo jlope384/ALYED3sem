@@ -1,30 +1,3 @@
-<<<<<<< HEAD
-import cProfile
-from main import generatorRandom
-import sorts
-
-def run_algorithms():
-    numerosAleatorios = generatorRandom()
-    ascDescBoolean = False
-
-    profiler = cProfile.Profile()
-    profiler.enable()
-    print(sorts.quickSort(numerosAleatorios, 0, len(numerosAleatorios) - 1, ascDescBoolean))
-    profiler.disable()
-    profiler.print_stats()
-
-    profiler = cProfile.Profile()
-    profiler.enable()
-    sorts.gnomeSort(numerosAleatorios, ascDescBoolean)
-    profiler.disable()
-    profiler.print_stats()
-
-    profiler = cProfile.Profile()
-    profiler.enable()
-    sorts.heapSort(numerosAleatorios, ascDescBoolean)
-    profiler.disable()
-    profiler.print_stats()
-=======
 #Universidad del Valle de Guatemala
 #Algoritmos y estructura de Datos
 #Hoja de Trabajo No. 3
@@ -36,7 +9,7 @@ import cProfile
 
 "La funcion genera un arreglo de 3000 numeros aleatorios entre 1 y 10000 y lo retorna"
 def generatorRandom():
-    array = [random.randint(1, 10000) for j in range(3000)] 
+    array = [random.randint(1, 10000) for j in range(300000)] 
     return array 
 
 "La funcion ejecuta los algoritmos de ordenamiento y mide el tiempo que tarda en ejecutar cada uno de ellos"
@@ -90,4 +63,3 @@ else:
 numerosAleatorios = generatorRandom() 
 run_algorithms(ascDescBoolean) 
 cProfile.run('run_algorithms(ascDescBoolean)') #Se ejecuta el profiler para medir el tiempo de ejecucion de cada algoritmo de ordenamiento
->>>>>>> df0e27ac5ab40b19cbc58056b4efb3f208ff1eec
