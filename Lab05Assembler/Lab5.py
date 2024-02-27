@@ -1,3 +1,9 @@
+#Universidad del valle de Guatemala
+#Organizacion de computadoras y assembler.
+#Javier Lopez - 23415
+#Daniela Ramirez - 23053
+#Laboratorio 05
+
 from Lab05 import *
 
 Menu = True
@@ -8,11 +14,11 @@ while Menu:
     opcion = int(input("Ingrese una opción: "))
     if opcion == 1:
         numero = float(input("Ingrese un número decimal: "))
-        # Aquí deberías llamar a una función que convierta un número decimal a binario.
+        # Función que convierte un número decimal a binarioIE74
         print(decimal_a_binarioIE74(numero))
     elif opcion == 2:
         numero = input("Ingrese un número binarioIE74: ")
-        # Asegúrate de que el número binario tiene la longitud correcta.
+        # Función que convierte un número binarioIE74 a decimal
         if len(numero) != 32:
             print("El número binario debe tener exactamente 32 bits.")
         else:

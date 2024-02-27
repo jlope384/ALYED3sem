@@ -1,3 +1,10 @@
+#Universidad del valle de Guatemala
+#Organizacion de computadoras y assembler.
+#Javier Lopez - 23415
+#Daniela Ramirez - 23053
+#Laboratorio 05
+
+# Función que convierte un número binarioIE74 a decimal
 def binarioIE74_a_decimal(numero_binario_xd):
     numero_binario_xd = str(numero_binario_xd)
     bit_signo = numero_binario_xd[0]
@@ -18,6 +25,7 @@ def binarioIE74_a_decimal(numero_binario_xd):
             fraccion += 2**(-1-i)
     return bit_signo*fraccion*2**exponente
 
+# Función que convierte un número decimal a binarioIE74
 def decimal_a_binarioIE74(numero_decimal_xd):
     numero_decimal_xd = float(numero_decimal_xd)
     bit_signo = "0"
