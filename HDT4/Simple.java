@@ -17,6 +17,7 @@ public class Simple<T> implements IListStack<T> {
             this.data = data;
         }
     }
+
     // Métodos de la interfaz IListStack
     @Override
     public void insert(T data) {
@@ -25,6 +26,7 @@ public class Simple<T> implements IListStack<T> {
         head = newNode;
         size++;
     }
+
     // Método para eliminar el último elemento de la lista
     @Override
     public T delete() {
