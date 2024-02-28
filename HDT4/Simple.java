@@ -1,3 +1,8 @@
+/**
+ * Esta clase implementa la interfaz IListStack y representa una implementación simple de una pila utilizando una lista enlazada.
+ * Permite insertar, eliminar, obtener el tamaño, verificar si está vacía, hacer push, pop y peek.
+ * @param <T> el tipo de dato de los elementos en la pila.
+ */
 package HDT4;
 
 public class Simple<T> implements IListStack<T> {
@@ -12,7 +17,7 @@ public class Simple<T> implements IListStack<T> {
             this.data = data;
         }
     }
-
+    // Métodos de la interfaz IListStack
     @Override
     public void insert(T data) {
         Node<T> newNode = new Node<>(data);
@@ -20,7 +25,7 @@ public class Simple<T> implements IListStack<T> {
         head = newNode;
         size++;
     }
-
+    // Método para eliminar el último elemento de la lista
     @Override
     public T delete() {
         if (isEmpty()) {
@@ -32,6 +37,7 @@ public class Simple<T> implements IListStack<T> {
         return deletedData;
     }
 
+    // Método para obtener el último elemento de la lista
     @Override
     public T get(int index) {
         if (index < 0 || index >= size) {
@@ -44,31 +50,39 @@ public class Simple<T> implements IListStack<T> {
         return current.data;
     }
 
+    // Método para obtener el tamaño de la lista
     @Override
     public int size() {
         return size;
     }
 
+    // Método para verificar si la lista está vacía
     @Override
     public boolean isEmpty() {
         return head == null;
     }
 
-     // Métodos de la interfaz Stack
-     @Override
+    // Métodos de la interfaz Stack
+    @Override
     public void push(T item) {
-        throw new UnsupportedOperationException("Unimplemented method");
+        insert(item);
     }
 
+    // Método para eliminar el último elemento de la pila
     @Override
     public T pop() {
-        throw new UnsupportedOperationException("Unimplemented");
+        if (isEmpty()) {
+            throw new IllegalStateException("La pila está vacía");
+        }
+        return delete();
     }
 
+    // Método para obtener el último elemento de la pila
     @Override
     public T peek() {
-        throw new UnsupportedOperationException("Unimplemented method");
+        if (isEmpty()) {
+            throw new IllegalStateException("La pila está vacía");
+        }
+        return head.data;
     }
 }
-
-

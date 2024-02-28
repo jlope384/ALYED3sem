@@ -1,3 +1,12 @@
+/**
+ * Esta clase representa una implementación de una lista doblemente enlazada que también
+ * cumple con la interfaz de una pila. Permite insertar elementos al final de la lista,
+ * eliminar el último elemento, obtener un elemento en una posición específica, obtener
+ * el tamaño de la lista, verificar si está vacía, agregar elementos a la pila, eliminar
+ * el último elemento de la pila y obtener el último elemento de la pila sin eliminarlo.
+ *
+ * @param <T> el tipo de elementos que se almacenarán en la lista
+ */
 package HDT4;
 
 public class Doble<T> implements IListStack<T>{
@@ -5,16 +14,27 @@ public class Doble<T> implements IListStack<T>{
     private Node<T> tail;
     private int size;
 
+    /**
+     * Clase interna que representa un nodo en una lista doblemente enlazada.
+     *
+     * @param <T> el tipo de dato almacenado en el nodo.
+     */
     private static class Node<T> {
         T data;
         Node<T> prev;
         Node<T> next;
 
+        /**
+         * Crea un nuevo nodo con el dato especificado.
+         *
+         * @param data el dato a almacenar en el nodo.
+         */
         Node(T data) {
             this.data = data;
         }
     }
 
+    // Métodos de la interfaz IListStack
     @Override
     public void insert(T data) {
         Node<T> newNode = new Node<>(data);
@@ -28,7 +48,7 @@ public class Doble<T> implements IListStack<T>{
         }
         size++;
     }
-
+    // Método para eliminar el último elemento de la lista
     @Override
     public T delete() {
         if (isEmpty()) {
@@ -44,7 +64,7 @@ public class Doble<T> implements IListStack<T>{
         size--;
         return deletedData;
     }
-
+    // Método para obtener un elemento en una posición específica
     @Override
     public T get(int index) {
         if (index < 0 || index >= size) {
@@ -56,12 +76,12 @@ public class Doble<T> implements IListStack<T>{
         }
         return current.data;
     }
-
+    // Método para obtener el tamaño de la lista
     @Override
     public int size() {
         return size;
     }
-
+    // Método para verificar si la lista está vacía
     @Override
     public boolean isEmpty() {
         return head == null;
@@ -72,7 +92,7 @@ public class Doble<T> implements IListStack<T>{
     public void push(T item) {
         insert(item);
     }
-
+    // Método para eliminar el último elemento de la pila
     @Override
     public T pop() {
         if (isEmpty()) {
@@ -80,7 +100,7 @@ public class Doble<T> implements IListStack<T>{
         }
         return delete();
     }
-
+    // Método para obtener el último elemento de la pila sin eliminarlo
     @Override
     public T peek() {
         if (isEmpty()) {
