@@ -4,10 +4,10 @@ import statistics
 import matplotlib.pyplot as plt
 
 # Parámetros de la simulación
-RANDOM_SEED = 42
+RANDOM_SEED = 42 
 CPU_SPEED = 3  # Número de instrucciones que puede ejecutar el CPU en una unidad de tiempo
-MEMORY_CAPACITY = 100
-INTERVAL = 10
+MEMORY_CAPACITY = 100 # Capacidad de la memoria RAM
+INTERVAL = 10 # Intervalo de tiempo para la generación de nuevos procesos
 
 # Inicialización de SimPy
 random.seed(RANDOM_SEED)
@@ -15,7 +15,7 @@ env = simpy.Environment()
 
 # Recursos
 RAM = simpy.Container(env, init=MEMORY_CAPACITY, capacity=MEMORY_CAPACITY)
-CPU = simpy.Resource(env, capacity=1)
+CPU = simpy.Resource(env, capacity=1) # Capacidad del CPU (1 proceso a la vez)
 
 # Listas para almacenar tiempos de ejecución
 tiempos_ejecucion_promedio = []
