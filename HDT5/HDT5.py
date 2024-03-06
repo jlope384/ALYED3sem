@@ -1,3 +1,8 @@
+#Universidad del Valle de Guatemala
+#Algoritmos y estructura de datos
+#Seccion 20
+#Javier Lopez - 23415
+
 import simpy
 import random
 import statistics
