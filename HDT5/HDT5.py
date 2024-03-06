@@ -15,7 +15,7 @@ env = simpy.Environment()
 
 # Recursos
 RAM = simpy.Container(env, init=MEMORY_CAPACITY, capacity=MEMORY_CAPACITY)
-CPU = simpy.Resource(env, capacity=1) # Capacidad del CPU (1 proceso a la vez)
+CPU = simpy.Resource(env, capacity=2) # Capacidad del CPU (2 proceso a la vez)
 
 # Listas para almacenar tiempos de ejecución
 tiempos_ejecucion_promedio = []
