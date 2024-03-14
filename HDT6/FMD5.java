@@ -1,8 +1,22 @@
 package HDT6;
 
-public class FMD5 implements IHash{
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
-    public String CreateHash(String valueString) {
-        return "MD5: " + valueString;
+public class FMD5 implements IHash {
+    @Override
+    public String CreateHash(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] hashBytes = md.digest(input.getBytes());
+            StringBuilder result = new StringBuilder();
+            for (byte b : hashBytes) {
+                result.append(String.format("%02x", b));
+            }
+            return result.toString();   
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
