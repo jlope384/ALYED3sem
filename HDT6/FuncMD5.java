@@ -3,7 +3,7 @@ package HDT6;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class FMD5 implements IHash {
+public class FuncMD5 implements IHash {
     @Override
     public String CreateHash(String input) {
         try {
