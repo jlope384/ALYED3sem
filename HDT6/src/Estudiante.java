@@ -58,20 +58,4 @@ public class Estudiante {
     public void setCountry(String country) {
         this.country = country;
     }
-    
-    // Método de búsqueda por nombre
-    public static Estudiante buscarPorNombre(Map<String, Estudiante> mapaEstudiantes, String nombre) {
-        return mapaEstudiantes.get(nombre);
-    }
-
-    // Método de búsqueda por país
-    public static List<Estudiante> buscarPorPais(Map<String, Estudiante> mapaEstudiantes, String pais) {
-        List<Estudiante> estudiantesEncontrados = new ArrayList<>();
-        for (Estudiante estudiante : mapaEstudiantes.values()) {
-            if (estudiante.getCountry().equalsIgnoreCase(pais)) {
-                estudiantesEncontrados.add(estudiante);
-            }
-        }
-        return estudiantesEncontrados;
-    }
 }

@@ -1,30 +1,25 @@
-package HDT6.src;
-
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JSONDataSource  {
+public class LectorJSON {
 
-    private final ObjectMapper objectMapper;
+    public List<Estudiante> leerEstudiantes(String nombreArchivo) {
+        List<Estudiante> estudiantes = new ArrayList<>();
+        ObjectMapper objectMapper = new ObjectMapper();
 
-    public JSONDataSource() {
-        this.objectMapper = new ObjectMapper();
-    }
-
-    public File saveStudents(List<Student> students, String path) {
         try {
-            File file = new File(path+ ".json");
-            objectMapper.writeValue(file, students);
-            return file;
+            // Leer el archivo JSON y convertirlo en una lista de objetos Estudiante
+            Estudiante[] estudiantesArray = objectMapper.readValue(new File(nombreArchivo), Estudiante[].class);
+            for (Estudiante estudiante : estudiantesArray) {
+                estudiantes.add(estudiante);
+            }
         } catch (IOException e) {
             e.printStackTrace();
-            return null;
         }
-    }
 
+        return estudiantes;
+    }
 }
