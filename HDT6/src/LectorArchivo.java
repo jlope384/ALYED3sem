@@ -14,24 +14,10 @@ public class LectorArchivo {
 
         try {
             // Leer el archivo JSON y convertirlo en una lista de objetos Estudiante
-            Estudiante[] estudiantesArray = objectMapper.readValue(new File(nombreArchivo), Estudiante[].class);
-            for (Estudiante estudiante : estudiantesArray) {
-                estudiantes.add(estudiante);
-            }
+            estudiantes = objectMapper.readValue(new File(nombreArchivo), objectMapper.getTypeFactory().constructCollectionType(List.class, Estudiante.class));
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return estudiantes;
     }
-
-
-public static void main(String[] args) {
-    LectorArchivo lector = new LectorArchivo();
-    List<Estudiante> listaEstudiantes = lector.leerEstudiantes("estudiantes.json");
-
-    for (Estudiante estudiante : listaEstudiantes) {
-        System.out.println(estudiante.getNombre() + ": " + estudiante.getCountry());
-        }
-    }
-}
+}  
