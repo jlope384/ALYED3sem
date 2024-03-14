@@ -1,15 +1,19 @@
 package HDT6.src;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 public class Estudiante {
     private String nombre;
-    private int Phone; 
+    private int phone; 
     private String email;
     private int postalZip;
     private String country;
 
-    public Estudiante(String nombre, int Phone, String email, int postalZip, String country) {
+    public Estudiante(String nombre, int phone, String email, int postalZip, String country) {
         this.nombre = nombre;
-        this.Phone = Phone;
+        this.phone = phone;
         this.email = email;
         this.postalZip = postalZip;
         this.country = country;
@@ -24,11 +28,11 @@ public class Estudiante {
     }
 
     public int getPhone() {
-        return Phone;
+        return phone;
     }
 
     public void setPhone(int phone) {
-        Phone = phone;
+        this.phone = phone;
     }
 
     public String getEmail() {
@@ -55,4 +59,19 @@ public class Estudiante {
         this.country = country;
     }
     
+    // Método de búsqueda por nombre
+    public static Estudiante buscarPorNombre(Map<String, Estudiante> mapaEstudiantes, String nombre) {
+        return mapaEstudiantes.get(nombre);
+    }
+
+    // Método de búsqueda por país
+    public static List<Estudiante> buscarPorPais(Map<String, Estudiante> mapaEstudiantes, String pais) {
+        List<Estudiante> estudiantesEncontrados = new ArrayList<>();
+        for (Estudiante estudiante : mapaEstudiantes.values()) {
+            if (estudiante.getCountry().equalsIgnoreCase(pais)) {
+                estudiantesEncontrados.add(estudiante);
+            }
+        }
+        return estudiantesEncontrados;
+    }
 }

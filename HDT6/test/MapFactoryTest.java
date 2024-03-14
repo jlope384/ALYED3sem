@@ -1,8 +1,14 @@
 package HDT6.test;
+import HDT6.src.*;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.TreeMap;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
 import java.util.Map;
+
 
 public class MapFactoryTest {
     @Test
