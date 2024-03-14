@@ -1,4 +1,4 @@
-package HDT6;
+package HDT6.src;
 
 public class HashFactory {
     public static IHash CreateHash(String valueString) {
