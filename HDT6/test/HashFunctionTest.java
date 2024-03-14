@@ -1,22 +1,16 @@
 package HDT6.test;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import org.junit.Test;
+import static org.junit.Assert.*;
 public class HashFunctionTest {
 
     @Test
-    public void testOrganicaHash() {
-        HashFunction hashFunction = HashFactory.createHashFunction("organica");
-        assertEquals("OrganicaHash(test)", hashFunction.hash("test"));
+    public void testCreateHash() {
+        System.out.println("CreateHash");
+        String input = "Hola";
+        FuncMD5 instance = new FuncMD5();
+        String expResult = "6d6f6e6f6c6f6c61";
+        String result = instance.CreateHash(input);
+        assertEquals(expResult, result);
     }
-
-    @Test
-    public void testMD5Hash() {
-        HashFunction hashFunction = HashFactory.createHashFunction("md5");
-        assertEquals("098f6bcd4621d373cade4e832627b4f6", hashFunction.hash("test"));
-    }
-
-    // Podrías agregar tests para SHA-1 si se implementa esa función hash
 }
-
