@@ -3,6 +3,11 @@ import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+ * The main class of the program.
+ * This class contains the main method that serves as the entry point of the program.
+ * It allows the user to select the type of map, type of hash function, and perform various operations on the map.
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
