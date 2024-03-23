@@ -1,5 +1,3 @@
-package HDT6.src;
-
 public class FuncOrganica implements IHash{
     @Override
     public String CreateHash(String input) {

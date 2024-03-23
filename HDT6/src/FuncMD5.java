@@ -1,5 +1,3 @@
-package HDT6.src;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 

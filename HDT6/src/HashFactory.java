@@ -1,5 +1,3 @@
-package HDT6.src;
-
 public class HashFactory {
     public static IHash CreateHash(String valueString) {
         switch (valueString.toLowerCase()) {
@@ -7,8 +5,8 @@ public class HashFactory {
                 return new FuncOrganica();
             case "md5":
                 return new FuncMD5();
-            //case "sha-1":
-                //break; // Add return statement for "sha-1" case
+            case "sha-1":
+                return new FSHA1();
             default:
                 throw new IllegalArgumentException("Tipo de función hash no válido: " + valueString);
         }

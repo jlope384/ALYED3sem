@@ -1,5 +1,3 @@
-package HDT6.src;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -20,4 +18,3 @@ public class FSHA1 implements IHash {
         }
     }
 }
-
