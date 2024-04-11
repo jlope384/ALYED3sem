@@ -1,5 +1,3 @@
-import java.util.PriorityQueue;
-
 public class ArbolBinario<T extends Comparable<T>> implements PriorityQueue<T> {
     private java.util.Vector<T> data;
 
