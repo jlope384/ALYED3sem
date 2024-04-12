@@ -22,7 +22,7 @@ public class Proceso implements Comparable<Proceso> {
     }
 
     public int calcularPrioridad() {
-        return 20 + nice;
+        return 120 + nice;
     }
 
     @Override
